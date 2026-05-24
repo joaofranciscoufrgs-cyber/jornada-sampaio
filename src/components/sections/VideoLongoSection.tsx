@@ -17,13 +17,13 @@ export function VideoLongoSection() {
           className="text-center mb-8 md:mb-10"
         >
           <p className="text-sampaio-gold/60 text-[10px] md:text-xs uppercase tracking-[0.4em] font-display mb-3">
-            Vídeo Institucional
+            Antes de começarmos
           </p>
           <h2 className="font-display text-3xl md:text-5xl text-sampaio-parchment text-balance">
             A Infantaria em palavra e imagem
           </h2>
           <p className="text-sampaio-parchment/60 mt-3 max-w-2xl mx-auto text-sm md:text-base">
-            Registro completo da Arma — tradição, modernidade e o espírito do
+            Um olhar sobre a Arma — tradição, modernidade e o espírito do
             infante brasileiro.
           </p>
         </motion.header>

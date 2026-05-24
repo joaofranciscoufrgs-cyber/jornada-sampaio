@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 
 const links = [
   { id: "hero", label: "Início" },
+  { id: "video-longo", label: "Institucional" },
   { id: "jornada", label: "Jornada" },
   { id: "timeline", label: "Carreira" },
   { id: "paraguai", label: "Tríplice Aliança" },
@@ -12,7 +13,6 @@ const links = [
   { id: "video-break", label: "Vídeo" },
   { id: "legado", label: "Legado" },
   { id: "rainha-hoje", label: "Rainha Hoje" },
-  { id: "video-longo", label: "Institucional" },
   { id: "encerramento", label: "Apologia" },
 ];
 

@@ -28,6 +28,7 @@ export default async function Home() {
     <main className="relative">
       <Navegacao />
       <HeroSection />
+      <VideoLongoSection />
       <JornadaSection />
       <TimelineSection />
       <ParaguaiSection />
@@ -36,7 +37,6 @@ export default async function Home() {
       <VideoBreakSection />
       <LegadoSection />
       <RainhaHojeSection />
-      <VideoLongoSection />
       <EncerramentoSection />
     </main>
   );
