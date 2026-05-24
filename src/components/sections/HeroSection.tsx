@@ -27,20 +27,29 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.4 }}
-            className="font-display text-5xl md:text-7xl lg:text-8xl font-black gradient-text text-balance leading-[1.05]"
+            className="font-display text-4xl md:text-6xl lg:text-7xl font-black gradient-text text-balance leading-[1.05]"
           >
-            O Bravo<br />dos Bravos
+            Ides Comandar,<br />Aprendei a Obedecer
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1.2, delay: 0.8 }}
-            className="font-display text-xl md:text-2xl text-sampaio-parchment/80 mt-6 italic"
+            transition={{ duration: 1.2, delay: 0.7 }}
+            className="font-display text-base md:text-lg text-sampaio-gold/80 mt-4 tracking-[0.3em] uppercase"
+          >
+            A Jornada do Bravo dos Bravos
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.2, delay: 0.9 }}
+            className="font-display text-lg md:text-xl text-sampaio-parchment/80 mt-6 italic"
           >
             Brigadeiro Antônio de Sampaio<br />
-            <span className="text-sampaio-gold/70 text-base not-italic font-body tracking-wider uppercase">
-              1810 — 1866
+            <span className="text-sampaio-gold/70 text-sm not-italic font-body tracking-wider uppercase">
+              Patrono da Arma de Infantaria · 1810 — 1866
             </span>
           </motion.p>
 
@@ -48,13 +57,13 @@ export function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5, delay: 1.4 }}
-            className="mt-10 max-w-xl mx-auto lg:mx-0 border-l-2 border-sampaio-gold/60 pl-6"
+            className="mt-8 max-w-xl mx-auto lg:mx-0 border-l-2 border-sampaio-gold/60 pl-6"
           >
-            <p className="font-display text-xl md:text-2xl text-sampaio-parchment leading-snug">
+            <p className="font-display text-lg md:text-xl text-sampaio-parchment leading-snug">
               &ldquo;Nós somos os Senhores AMANHÃ!&rdquo;
             </p>
             <footer className="text-xs uppercase tracking-widest text-sampaio-gold/60 mt-3">
-              — Para os cadetes do CPO R · Porto Alegre · 2026
+              — Para os cadetes do CPO R · Porto Alegre · 29.MAI.26
             </footer>
           </motion.blockquote>
         </div>

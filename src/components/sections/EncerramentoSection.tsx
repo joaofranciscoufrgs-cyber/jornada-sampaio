@@ -63,6 +63,56 @@ export function EncerramentoSection() {
             Você não escolhe · você é escolhido pela Infantaria
           </p>
         </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 2.5, duration: 1 }}
+          className="mt-16 space-y-3"
+        >
+          <p className="font-display text-3xl md:text-5xl gradient-text font-black leading-tight">
+            SALVE O BRIGADEIRO SAMPAIO!
+          </p>
+          <p className="font-display text-2xl md:text-4xl gradient-text font-black leading-tight">
+            SALVE A INFANTARIA DO EXÉRCITO BRASILEIRO!
+          </p>
+        </motion.div>
+
+        <motion.footer
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 3.2, duration: 1 }}
+          className="mt-20 pt-10 border-t border-sampaio-gold/20"
+        >
+          <p className="text-sampaio-gold/70 text-xs uppercase tracking-[0.4em] font-display mb-3">
+            AOR/2-RS
+          </p>
+          <p className="text-sampaio-parchment/70 italic text-sm md:text-base">
+            Preservando a história, fortalecendo valores e honrando a Reserva
+          </p>
+          <p className="text-sampaio-parchment/50 mt-6 text-xs uppercase tracking-widest font-display">
+            Palestrantes
+          </p>
+          <p className="text-sampaio-parchment text-sm md:text-base mt-2">
+            Cel R/1 Inf <strong className="text-sampaio-gold">Dorneles</strong>
+            <span className="text-sampaio-gold/40 mx-3">·</span>
+            1º Ten R/2 Inf <strong className="text-sampaio-gold">Brasil</strong>
+          </p>
+          <p className="text-sampaio-parchment/40 text-xs mt-6">
+            29 de maio de 2026 · CPO R · Porto Alegre — RS
+          </p>
+
+          <a
+            href="/videos/institucional-longo.mp4"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-block mt-8 text-xs uppercase tracking-widest font-display border border-sampaio-gold/40 text-sampaio-gold/80 hover:text-sampaio-gold hover:border-sampaio-gold px-4 py-2 rounded transition-colors"
+          >
+            ▷ Assistir vídeo institucional completo
+          </a>
+        </motion.footer>
       </div>
     </section>
   );

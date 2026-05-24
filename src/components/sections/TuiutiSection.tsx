@@ -22,7 +22,19 @@ export function TuiutiSection() {
         <div className="bg-sampaio-ink/80 border border-sampaio-gold/30 rounded-lg p-6 md:p-10">
           <h3 className="font-display text-2xl text-sampaio-gold mb-6 text-center">Disposição Aliada — Lagoa de Tuiuti</h3>
 
-          <div className="grid grid-cols-3 gap-2 md:gap-6 mb-8">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-center mb-6"
+          >
+            <p className="text-xs uppercase tracking-[0.4em] text-sampaio-gold/70 font-display">
+              A Rainha das Armas em formação
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-3 gap-2 md:gap-6 mb-4">
             {[
               { name: "Argentinos", side: "Direita", color: "bg-sky-900/40 border-sky-500/50" },
               { name: "Brasileiros · 3ª Div Encouraçada", side: "Centro", color: "bg-emerald-900/40 border-emerald-500/50" },
@@ -41,6 +53,28 @@ export function TuiutiSection() {
               </motion.div>
             ))}
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
+            className="bg-sampaio-ink/60 border border-sampaio-gold/20 rounded p-4 mb-8 text-center"
+          >
+            <p className="text-xs uppercase tracking-widest text-sampaio-gold/70 mb-2 font-display">
+              3ª Divisão Encouraçada — os tradicionais batalhões
+            </p>
+            <p className="font-display text-sampaio-parchment text-sm md:text-base">
+              <span className="text-sampaio-gold">Vanguardeiro</span>
+              <span className="text-sampaio-gold/40 mx-3">·</span>
+              <span className="text-sampaio-gold">Treme-Terra</span>
+              <span className="text-sampaio-gold/40 mx-3">·</span>
+              <span className="text-sampaio-gold">Arranca-Toco</span>
+            </p>
+            <p className="text-xs text-sampaio-parchment/50 italic mt-2">
+              Reconhecidos pela combatividade e resistência
+            </p>
+          </motion.div>
 
           <div className="grid md:grid-cols-2 gap-6 text-sampaio-parchment/80">
             <motion.div

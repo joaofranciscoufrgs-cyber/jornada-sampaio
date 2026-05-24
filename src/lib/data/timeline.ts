@@ -20,7 +20,7 @@ export const TIMELINE: EventoTimeline[] = [
   {
     ano: "1832",
     titulo: "Batismo de fogo",
-    descricao: "Combates de Icó e São Miguel. 6 horas de combate corpo a corpo.",
+    descricao: "4 de abril — combate em Icó contra as forças que defendiam a restituição de D. Pedro I. 6 horas corpo a corpo.",
   },
   {
     ano: "1835-37",
