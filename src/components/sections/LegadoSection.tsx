@@ -53,7 +53,7 @@ export function LegadoSection() {
           </h2>
         </header>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {homenagens.map((h, i) => (
             <motion.div
               key={h.ano}
@@ -75,6 +75,28 @@ export function LegadoSection() {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="grid sm:grid-cols-3 gap-4 mb-12"
+        >
+          {[
+            { src: "/images/selo-centenario.jpg", legenda: "Selo Centenário — 1966" },
+            { src: "/images/praca-sampaio-poa.jpg", legenda: "Praça Sampaio — Porto Alegre" },
+            { src: "/images/qg-10rm.jpg", legenda: "QG da 10ª RM — Fortaleza-CE" },
+          ].map((img) => (
+            <figure key={img.src} className="overflow-hidden rounded-lg border border-sampaio-gold/30 bg-sampaio-ink/40">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={img.src} alt={img.legenda} className="w-full h-48 object-cover sepia-[0.2]" />
+              <figcaption className="text-xs uppercase tracking-widest text-sampaio-gold/70 p-3 text-center font-display">
+                {img.legenda}
+              </figcaption>
+            </figure>
+          ))}
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}

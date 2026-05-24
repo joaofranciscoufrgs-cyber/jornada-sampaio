@@ -83,6 +83,27 @@ export function TuiutiSection() {
               55.000 homens em campo · mais de 5 horas de combate · vitória aliada decisiva
             </p>
           </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            className="mt-10 grid md:grid-cols-2 gap-4"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/tuiuti-01.jpg"
+              alt="Batalha de Tuiuti - litografia"
+              className="w-full h-64 object-cover rounded-lg border border-sampaio-gold/30 sepia-[0.3]"
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/tuiuti-02.jpg"
+              alt="Batalha de Tuiuti - representação"
+              className="w-full h-64 object-cover rounded-lg border border-sampaio-gold/30 sepia-[0.3]"
+            />
+          </motion.div>
         </div>
       </div>
     </section>

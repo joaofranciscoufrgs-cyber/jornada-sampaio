@@ -21,7 +21,7 @@ const slides = [
     ],
   },
   {
-    titulo: "1865 — RS Invadido",
+    titulo: "1865 — Campanha de Corrientes",
     bullets: [
       "Tropas paraguaias invadem Corrientes (Argentina), cruzam o rio Uruguay e entram no RS",
       "11 de junho: Batalha do Riachuelo — vitória naval brasileira",
