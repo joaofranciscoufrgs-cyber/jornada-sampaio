@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { getSocket } from "@/lib/socket-client";
 import { formatCPF, formatPhone } from "@/lib/validations";
 
@@ -84,25 +85,36 @@ export function AdminDashboard({ adminEmail }: { adminEmail: string }) {
             </h1>
             <p className="text-sampaio-parchment/60 text-xs mt-1 font-mono">{adminEmail}</p>
           </div>
-          <div className="flex gap-2">
-            <a
-              href="/api/admin/inscricoes.csv"
-              className="text-sm font-display uppercase tracking-widest border border-sampaio-gold/60 text-sampaio-gold px-4 py-2 rounded hover:bg-sampaio-gold hover:text-sampaio-ink transition-colors"
-            >
-              Baixar CSV
-            </a>
-            <a
-              href="/api/admin/inscricoes.xlsx"
-              className="text-sm font-display uppercase tracking-widest border border-sampaio-gold/60 text-sampaio-gold px-4 py-2 rounded hover:bg-sampaio-gold hover:text-sampaio-ink transition-colors"
-            >
-              Baixar XLSX
-            </a>
-            <button
-              onClick={logout}
-              className="text-sm font-display uppercase tracking-widest text-sampaio-parchment/60 hover:text-sampaio-blood transition-colors px-4 py-2"
-            >
-              Sair
-            </button>
+          <div className="flex flex-col items-end gap-3">
+            <nav className="flex gap-4 text-sm font-display uppercase tracking-widest">
+              <span className="text-sampaio-gold">Inscrições</span>
+              <Link href="/admin/usuarios" className="text-sampaio-parchment/70 hover:text-sampaio-gold">
+                Usuários
+              </Link>
+              <Link href="/admin/conta" className="text-sampaio-parchment/70 hover:text-sampaio-gold">
+                Conta
+              </Link>
+              <button
+                onClick={logout}
+                className="text-sampaio-parchment/60 hover:text-sampaio-blood transition-colors"
+              >
+                Sair
+              </button>
+            </nav>
+            <div className="flex gap-2">
+              <a
+                href="/api/admin/inscricoes.csv"
+                className="text-sm font-display uppercase tracking-widest border border-sampaio-gold/60 text-sampaio-gold px-4 py-2 rounded hover:bg-sampaio-gold hover:text-sampaio-ink transition-colors"
+              >
+                Baixar CSV
+              </a>
+              <a
+                href="/api/admin/inscricoes.xlsx"
+                className="text-sm font-display uppercase tracking-widest border border-sampaio-gold/60 text-sampaio-gold px-4 py-2 rounded hover:bg-sampaio-gold hover:text-sampaio-ink transition-colors"
+              >
+                Baixar XLSX
+              </a>
+            </div>
           </div>
         </header>
 
