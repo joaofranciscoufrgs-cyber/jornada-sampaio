@@ -10,7 +10,7 @@ Apresentação interativa para a **Jornada dos Patronos — Dia da Infantaria**,
 - **Next.js 14** (App Router, standalone output)
 - **TypeScript** + **Tailwind CSS** + **Framer Motion**
 - **Socket.IO** para o quiz ao vivo (servidor custom em `server.ts`)
-- **Railway** para deploy via Dockerfile
+- **Railway** para deploy via Dockerfile (auto-deploy do `main` no GitHub)
 
 ## Estrutura
 
