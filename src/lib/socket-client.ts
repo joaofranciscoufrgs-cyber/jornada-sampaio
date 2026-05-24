@@ -1,10 +1,9 @@
 "use client";
 import { io, Socket } from "socket.io-client";
-import type { ClientToServerEvents, ServerToClientEvents } from "@/types/quiz";
 
-let socket: Socket<ServerToClientEvents, ClientToServerEvents> | null = null;
+let socket: Socket | null = null;
 
-export function getSocket(): Socket<ServerToClientEvents, ClientToServerEvents> {
+export function getSocket(): Socket {
   if (!socket) {
     socket = io({
       path: "/socket.io",

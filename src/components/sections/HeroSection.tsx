@@ -65,7 +65,7 @@ export function HeroSection() {
           transition={{ duration: 1, delay: 1.6 }}
           className="flex justify-center"
         >
-          <QRBlock path="/quiz" label="Entre na batalha" />
+          <QRBlock path="/inscricao" label="Apresentar-se à tropa" />
         </motion.div>
       </div>
 
