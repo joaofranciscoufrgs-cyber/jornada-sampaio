@@ -75,18 +75,18 @@ export function AdminDashboard({ adminEmail }: { adminEmail: string }) {
   return (
     <main className="min-h-screen p-6 grain">
       <div className="max-w-7xl mx-auto">
-        <header className="flex flex-wrap justify-between items-end gap-4 mb-6 pb-6 border-b border-sampaio-gold/30">
+        <header className="flex flex-col md:flex-row md:justify-between md:items-end gap-4 mb-6 pb-6 border-b border-sampaio-gold/30">
           <div>
-            <p className="text-sampaio-gold/60 text-xs uppercase tracking-[0.4em] font-display">
+            <p className="text-sampaio-gold/60 text-[10px] md:text-xs uppercase tracking-[0.4em] font-display">
               Painel de Comando · AOR/2-RS
             </p>
-            <h1 className="font-display text-3xl md:text-4xl gradient-text">
+            <h1 className="font-display text-2xl md:text-4xl gradient-text">
               Inscrições da Jornada
             </h1>
-            <p className="text-sampaio-parchment/60 text-xs mt-1 font-mono">{adminEmail}</p>
+            <p className="text-sampaio-parchment/60 text-xs mt-1 font-mono break-all">{adminEmail}</p>
           </div>
-          <div className="flex flex-col items-end gap-3">
-            <nav className="flex gap-4 text-sm font-display uppercase tracking-widest">
+          <div className="flex flex-col md:items-end gap-3 w-full md:w-auto">
+            <nav className="flex flex-wrap gap-3 md:gap-4 text-xs md:text-sm font-display uppercase tracking-widest">
               <span className="text-sampaio-gold">Inscrições</span>
               <Link href="/admin/usuarios" className="text-sampaio-parchment/70 hover:text-sampaio-gold">
                 Usuários
@@ -101,16 +101,16 @@ export function AdminDashboard({ adminEmail }: { adminEmail: string }) {
                 Sair
               </button>
             </nav>
-            <div className="flex gap-2">
+            <div className="flex gap-2 w-full md:w-auto">
               <a
                 href="/api/admin/inscricoes.csv"
-                className="text-sm font-display uppercase tracking-widest border border-sampaio-gold/60 text-sampaio-gold px-4 py-2 rounded hover:bg-sampaio-gold hover:text-sampaio-ink transition-colors"
+                className="flex-1 md:flex-none text-center text-xs md:text-sm font-display uppercase tracking-widest border border-sampaio-gold/60 text-sampaio-gold px-3 md:px-4 py-2 rounded hover:bg-sampaio-gold hover:text-sampaio-ink transition-colors"
               >
                 Baixar CSV
               </a>
               <a
                 href="/api/admin/inscricoes.xlsx"
-                className="text-sm font-display uppercase tracking-widest border border-sampaio-gold/60 text-sampaio-gold px-4 py-2 rounded hover:bg-sampaio-gold hover:text-sampaio-ink transition-colors"
+                className="flex-1 md:flex-none text-center text-xs md:text-sm font-display uppercase tracking-widest border border-sampaio-gold/60 text-sampaio-gold px-3 md:px-4 py-2 rounded hover:bg-sampaio-gold hover:text-sampaio-ink transition-colors"
               >
                 Baixar XLSX
               </a>

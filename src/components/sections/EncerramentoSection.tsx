@@ -103,15 +103,6 @@ export function EncerramentoSection() {
           <p className="text-sampaio-parchment/40 text-xs mt-6">
             29 de maio de 2026 · CPO R · Porto Alegre — RS
           </p>
-
-          <a
-            href="/videos/institucional-longo.mp4"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-block mt-8 text-xs uppercase tracking-widest font-display border border-sampaio-gold/40 text-sampaio-gold/80 hover:text-sampaio-gold hover:border-sampaio-gold px-4 py-2 rounded transition-colors"
-          >
-            ▷ Assistir vídeo institucional completo
-          </a>
         </motion.footer>
       </div>
     </section>

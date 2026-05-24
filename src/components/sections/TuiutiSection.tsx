@@ -34,7 +34,7 @@ export function TuiutiSection() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-3 gap-2 md:gap-6 mb-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6 mb-4">
             {[
               { name: "Argentinos", side: "Direita", color: "bg-sky-900/40 border-sky-500/50" },
               { name: "Brasileiros · 3ª Div Encouraçada", side: "Centro", color: "bg-emerald-900/40 border-emerald-500/50" },

@@ -10,6 +10,7 @@ import { TresFerimentosSection } from "@/components/sections/TresFerimentosSecti
 import { VideoBreakSection } from "@/components/sections/VideoBreakSection";
 import { LegadoSection } from "@/components/sections/LegadoSection";
 import { RainhaHojeSection } from "@/components/sections/RainhaHojeSection";
+import { VideoLongoSection } from "@/components/sections/VideoLongoSection";
 import { EncerramentoSection } from "@/components/sections/EncerramentoSection";
 import { Navegacao } from "@/components/ui/Navegacao";
 
@@ -35,6 +36,7 @@ export default async function Home() {
       <VideoBreakSection />
       <LegadoSection />
       <RainhaHojeSection />
+      <VideoLongoSection />
       <EncerramentoSection />
     </main>
   );

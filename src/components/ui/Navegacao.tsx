@@ -12,6 +12,7 @@ const links = [
   { id: "video-break", label: "Vídeo" },
   { id: "legado", label: "Legado" },
   { id: "rainha-hoje", label: "Rainha Hoje" },
+  { id: "video-longo", label: "Institucional" },
   { id: "encerramento", label: "Apologia" },
 ];
 

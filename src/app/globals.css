@@ -13,12 +13,39 @@ html, body {
   background: rgb(var(--background));
   color: rgb(var(--foreground));
   scroll-behavior: smooth;
+  /* Avoid iOS bounce double-bg flash */
+  background-attachment: fixed;
+}
+
+html {
+  /* iOS safe area as CSS var available everywhere */
+  --sat: env(safe-area-inset-top);
+  --sar: env(safe-area-inset-right);
+  --sab: env(safe-area-inset-bottom);
+  --sal: env(safe-area-inset-left);
 }
 
 body {
   font-family: 'Inter', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
+}
+
+/* Ensure all inputs hit ≥16px so iOS doesn't zoom on focus */
+input, textarea, select {
+  font-size: 16px;
+}
+@media (min-width: 640px) {
+  input, textarea, select {
+    font-size: inherit;
+  }
+}
+
+/* Make tap targets reasonable on small screens */
+button, a {
+  -webkit-tap-highlight-color: rgba(201, 162, 91, 0.2);
 }
 
 .font-display {
