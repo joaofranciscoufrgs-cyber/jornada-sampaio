@@ -21,3 +21,7 @@ next-env.d.ts
 .vercel
 .idea/
 .vscode/
+
+# PDFs gerados (contêm credenciais)
+*.pdf
+!docs/**/*.pdf
