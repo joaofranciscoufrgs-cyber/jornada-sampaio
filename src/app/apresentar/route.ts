@@ -4,6 +4,19 @@ import { cookies } from "next/headers";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
+function buildPublicBase(req: NextRequest): string {
+  const headers = req.headers;
+  const proto =
+    headers.get("x-forwarded-proto") ||
+    (req.nextUrl.protocol.replace(":", "")) ||
+    "https";
+  const host =
+    headers.get("x-forwarded-host") ||
+    headers.get("host") ||
+    req.nextUrl.host;
+  return `${proto}://${host}`;
+}
+
 export async function GET(req: NextRequest) {
   const token = req.nextUrl.searchParams.get("token");
   const expected = process.env.PRESENTER_TOKEN;
@@ -17,5 +30,8 @@ export async function GET(req: NextRequest) {
     path: "/",
     maxAge: 60 * 60 * 12,
   });
-  return NextResponse.redirect(new URL("/", req.url));
+  // Use public-facing host from proxy headers so redirect resolves to railway.app
+  // and not to the internal 0.0.0.0:8080 container address.
+  const base = buildPublicBase(req);
+  return NextResponse.redirect(`${base}/`, 307);
 }

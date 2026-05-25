@@ -210,7 +210,7 @@ for d in desc2:
 y = py - 16
 
 # === PANEL ADMIN (full width) ===
-adm_h = 96
+adm_h = 112
 c.setStrokeColor(BLOOD)
 c.setLineWidth(1.5)
 c.setFillColor(ASH)
@@ -220,44 +220,52 @@ c.rect(MARGIN, y - 4, W - 2*MARGIN, 4, fill=1, stroke=0)
 c.setFillColor(BLOOD)
 c.setFont("Helvetica-Bold", 8)
 c.drawString(MARGIN + 14, y - 18, "PAINEL DO TENENTE  (acompanhar inscrições em tempo real)")
+
+# Row 1: URL full width
 c.setFillColor(PARCHMENT)
-c.setFont("Helvetica-Bold", 10)
-c.drawString(MARGIN + 14, y - 36, "Abrir:")
+c.setFont("Helvetica-Bold", 8.5)
+c.drawString(MARGIN + 14, y - 34, "Acessar:")
 c.setFillColor(GOLD)
 c.setFont("Courier", 9)
-c.drawString(MARGIN + 50, y - 36, ADMIN_URL)
-c.linkURL(ADMIN_URL, (MARGIN + 50, y - 40, MARGIN + 50 + c.stringWidth(ADMIN_URL, "Courier", 9), y - 28), relative=0)
+c.drawString(MARGIN + 60, y - 34, ADMIN_URL)
+c.linkURL(ADMIN_URL, (MARGIN + 60, y - 38, MARGIN + 60 + c.stringWidth(ADMIN_URL, "Courier", 9), y - 26), relative=0)
+
+# Below: two columns
+COL_LEFT_X = MARGIN + 14
+COL_RIGHT_X = MARGIN + 290
 
 # Credentials
 c.setFillColor(PARCHMENT)
-c.setFont("Helvetica-Bold", 9)
-c.drawString(MARGIN + 14, y - 52, "E-mail:")
-c.setFont("Courier", 9)
+c.setFont("Helvetica-Bold", 8.5)
+c.drawString(COL_LEFT_X, y - 62, "E-mail:")
+c.setFont("Courier", 8.5)
 c.setFillColor(GOLD)
-c.drawString(MARGIN + 55, y - 52, ADMIN_EMAIL)
+c.drawString(COL_LEFT_X + 38, y - 62, ADMIN_EMAIL)
 c.setFillColor(PARCHMENT)
-c.setFont("Helvetica-Bold", 9)
-c.drawString(MARGIN + 14, y - 66, "Senha:")
-c.setFont("Courier", 9)
+c.setFont("Helvetica-Bold", 8.5)
+c.drawString(COL_LEFT_X, y - 75, "Senha:")
+c.setFont("Courier", 8.5)
 c.setFillColor(GOLD)
-c.drawString(MARGIN + 55, y - 66, ADMIN_PASS)
+c.drawString(COL_LEFT_X + 38, y - 75, ADMIN_PASS)
 c.setFillColor(DIM)
-c.setFont("Helvetica-Oblique", 7.5)
-c.drawString(MARGIN + 14, y - 80, "(troque a senha em /admin/conta após o primeiro acesso)")
+c.setFont("Helvetica-Oblique", 7)
+c.drawString(COL_LEFT_X, y - 88, "(troque em /admin/conta após o primeiro acesso)")
 
 # Features list (right side of panel)
-fx = MARGIN + 320
+c.setFillColor(PARCHMENT)
+c.setFont("Helvetica-Bold", 8)
+c.drawString(COL_RIGHT_X, y - 34, "Lá você pode:")
 c.setFillColor(DIM)
-c.setFont("Helvetica", 8.5)
+c.setFont("Helvetica", 7.5)
 features = [
-    "• Lista de inscritos em tempo real",
-    "• Busca por nome, CPF, e-mail, telefone",
-    "• Download CSV / XLSX (1 clique)",
+    "• Ver inscritos em tempo real",
+    "• Buscar por nome, CPF, e-mail, telefone",
+    "• Baixar CSV / XLSX (1 clique)",
     "• Cadastrar outros oficiais (CRUD)",
 ]
-yy = y - 36
+yy = y - 48
 for f in features:
-    c.drawString(fx, yy, f); yy -= 11
+    c.drawString(COL_RIGHT_X, yy, f); yy -= 11
 
 y -= (adm_h + 16)
 
@@ -274,11 +282,12 @@ y -= 12
 c.setFillColor(DIM)
 c.setFont("Helvetica", 8.5)
 sections = [
-    "1. Abertura  •  2. Jornada nacional (mapa interativo de 13 lugares)  •  3. Carreira (17 marcos)",
-    "4. Guerra da Tríplice Aliança (modo slide tradicional)  •  5. Tuiuti tático (3ª Div Encouraçada)",
-    "6. Os 3 Ferimentos (com as frases icônicas)  •  7. Vídeo institucional embebido",
-    "8. Legado e homenagens  •  9. A Rainha das Armas Hoje (FEB Itália, 10 especializações)",
-    "10. Encerramento com 'Salve o Brigadeiro!' e créditos AOR/2-RS",
+    "1. Abertura (Hero)  •  2. Vídeo institucional (cold open)  •  3. Jornada nacional (mapa)",
+    "4. Carreira do Bravo (17 marcos)  •  5. Guerra da Tríplice Aliança (modo slide tradicional)",
+    "6. Tuiuti tático (3ª Div Encouraçada)  •  7. Os 3 Ferimentos (clímax emocional)",
+    "8. Vídeo 1min (respiro)  •  9. Legado e homenagens",
+    "10. A Rainha das Armas Hoje (FEB Itália + 10 especializações modernas)",
+    "11. Encerramento com 'Salve o Brigadeiro!' e créditos AOR/2-RS",
 ]
 for s in sections:
     c.drawString(MARGIN, y, s); y -= 11
