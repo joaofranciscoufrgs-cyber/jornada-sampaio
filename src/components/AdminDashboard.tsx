@@ -172,7 +172,7 @@ export function AdminDashboard({ adminEmail }: { adminEmail: string }) {
                 {!loading && filtered.length === 0 && (
                   <tr>
                     <td colSpan={7} className="text-center py-12 text-sampaio-parchment/50 italic">
-                      {busca ? "Nenhum resultado." : "Nenhuma inscrição ainda. Aguardando os cadetes…"}
+                      {busca ? "Nenhum resultado." : "Nenhuma inscrição ainda. Aguardando os alunos…"}
                     </td>
                   </tr>
                 )}

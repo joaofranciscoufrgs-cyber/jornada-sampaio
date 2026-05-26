@@ -77,7 +77,7 @@ c.setFillColor(PARCHMENT)
 c.setFont("Helvetica-Bold", 9)
 c.drawCentredString(W - MARGIN - 50, H - 48, "29.MAI.26")
 c.setFont("Helvetica", 7)
-c.drawCentredString(W - MARGIN - 50, H - 60, "CPO R · Porto Alegre")
+c.drawCentredString(W - MARGIN - 50, H - 60, "CPOR/PA · Porto Alegre")
 
 # === GREETING ===
 y = H - band_h - 28
@@ -89,7 +89,7 @@ c.setFillColor(DIM)
 c.setFont("Helvetica", 10)
 greeting = (
     "Conforme combinado, segue a apresentação interativa pronta para a "
-    "Jornada dos Patronos no CPO R. Tudo no ar, testado de ponta a ponta."
+    "Jornada dos Patronos no CPOR/PA. Tudo no ar, testado de ponta a ponta."
 )
 # Wrap manually
 def wrap(text, font, size, width):
@@ -125,7 +125,7 @@ c.drawString(MARGIN + 14, y - 36, APP_URL)
 c.linkURL(APP_URL, (MARGIN + 14, y - 42, MARGIN + 14 + c.stringWidth(APP_URL, "Courier-Bold", 13), y - 28), relative=0)
 c.setFillColor(DIM)
 c.setFont("Helvetica-Oblique", 9)
-c.drawString(MARGIN + 14, y - 50, "Aberto. Os cadetes acessam o QR; você usa o link próprio (abaixo).")
+c.drawString(MARGIN + 14, y - 50, "Aberto. Os alunos acessam o QR; você usa o link próprio (abaixo).")
 y -= (card_h + 18)
 
 # === 3 USAGE PANELS ===
@@ -180,7 +180,7 @@ c.setFillColor(GOLD)
 c.rect(px2, py + panel_h - 4, panel_w, 4, fill=1, stroke=0)
 c.setFillColor(GOLD)
 c.setFont("Helvetica-Bold", 8)
-c.drawString(px2 + 12, py + panel_h - 18, "PARA OS CADETES  (cadastro via QR)")
+c.drawString(px2 + 12, py + panel_h - 18, "PARA OS ALUNOS  (cadastro via QR)")
 
 # QR code on the right
 qr_size = 80
@@ -195,7 +195,7 @@ c.drawString(px2 + 12, py + panel_h - 38, "Aponta a câmera:")
 c.setFillColor(DIM)
 c.setFont("Helvetica", 8.5)
 desc2 = [
-    "Cadete preenche:",
+    "Aluno preenche:",
     "  • Nome de guerra",
     "  • CPF (validado)",
     "  • E-mail",

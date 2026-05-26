@@ -69,7 +69,7 @@ export function HeroSection() {
               &ldquo;Nós somos os Senhores AMANHÃ!&rdquo;
             </p>
             <footer className="text-xs uppercase tracking-widest text-sampaio-gold/60 mt-3">
-              — Para os cadetes do CPO R · Porto Alegre · 29.MAI.26
+              — Para os alunos do CPOR/PA · 29.MAI.26
             </footer>
           </motion.blockquote>
         </div>

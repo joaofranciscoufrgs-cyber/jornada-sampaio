@@ -101,7 +101,7 @@ export function EncerramentoSection() {
             1º Ten R/2 Inf <strong className="text-sampaio-gold">Brasil</strong>
           </p>
           <p className="text-sampaio-parchment/40 text-xs mt-6">
-            29 de maio de 2026 · CPO R · Porto Alegre — RS
+            29 de maio de 2026 · CPOR/PA · Porto Alegre — RS
           </p>
         </motion.footer>
       </div>
