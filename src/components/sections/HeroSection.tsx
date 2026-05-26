@@ -27,37 +27,43 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.4 }}
-            className="font-display text-4xl md:text-6xl lg:text-7xl font-black gradient-text text-balance leading-[1.05]"
+            className="font-display text-5xl md:text-7xl lg:text-8xl font-black gradient-text text-balance leading-[1.02]"
           >
-            Ides Comandar,<br />Aprendei a Obedecer
+            A Jornada do<br />Bravo dos Bravos
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.2, delay: 0.7 }}
-            className="font-display text-base md:text-lg text-sampaio-gold/80 mt-4 tracking-[0.3em] uppercase"
+            className="font-display text-xl md:text-2xl text-sampaio-parchment mt-6 italic"
           >
-            A Jornada do Bravo dos Bravos
+            Brigadeiro Antônio de Sampaio
           </motion.p>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.2, delay: 0.9 }}
-            className="font-display text-lg md:text-xl text-sampaio-parchment/80 mt-6 italic"
+            className="text-xs md:text-sm text-sampaio-gold/80 mt-2 font-body tracking-[0.2em] uppercase"
           >
-            Brigadeiro Antônio de Sampaio<br />
-            <span className="text-sampaio-gold/70 text-sm not-italic font-body tracking-wider uppercase">
-              Patrono da Arma de Infantaria · 1810 — 1866
-            </span>
+            Patrono da Arma de Infantaria · 1810 — 1866
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.2, delay: 1.2 }}
+            className="font-display text-base md:text-lg text-sampaio-gold/80 mt-8 tracking-[0.3em] uppercase"
+          >
+            &ldquo;Ides Comandar, Aprendei a Obedecer&rdquo;
           </motion.p>
 
           <motion.blockquote
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1.5, delay: 1.4 }}
-            className="mt-8 max-w-xl mx-auto lg:mx-0 border-l-2 border-sampaio-gold/60 pl-6"
+            transition={{ duration: 1.5, delay: 1.5 }}
+            className="mt-6 max-w-xl mx-auto lg:mx-0 border-l-2 border-sampaio-gold/60 pl-6"
           >
             <p className="font-display text-lg md:text-xl text-sampaio-parchment leading-snug">
               &ldquo;Nós somos os Senhores AMANHÃ!&rdquo;
