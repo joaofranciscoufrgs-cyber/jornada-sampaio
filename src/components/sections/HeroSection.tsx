@@ -27,9 +27,14 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.4 }}
-            className="font-display text-5xl md:text-7xl lg:text-8xl font-black gradient-text text-balance leading-[1.02]"
+            className="font-display font-black gradient-text leading-[1.05]"
           >
-            A Jornada do<br />Bravo dos Bravos
+            <span className="block text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5rem] sm:whitespace-nowrap">
+              A Jornada do
+            </span>
+            <span className="block text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5rem] sm:whitespace-nowrap">
+              Bravo dos Bravos
+            </span>
           </motion.h1>
 
           <motion.p
