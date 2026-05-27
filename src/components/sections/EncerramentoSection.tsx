@@ -96,7 +96,7 @@ export function EncerramentoSection() {
             Palestrantes
           </p>
           <p className="text-sampaio-parchment text-sm md:text-base mt-2">
-            Cel R/1 Inf <strong className="text-sampaio-gold">Dorneles</strong>
+            Cel R/1 Inf <strong className="text-sampaio-gold">Caminha</strong>
             <span className="text-sampaio-gold/40 mx-3">·</span>
             1º Ten R/2 Inf <strong className="text-sampaio-gold">Brasil</strong>
           </p>
