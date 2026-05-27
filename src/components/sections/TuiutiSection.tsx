@@ -123,20 +123,25 @@ export function TuiutiSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="mt-10 grid md:grid-cols-2 gap-4"
+            className="mt-10"
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/tuiuti-01.jpg"
-              alt="Batalha de Tuiuti - litografia"
-              className="w-full h-64 object-cover rounded-lg border border-sampaio-gold/30 sepia-[0.3]"
-            />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/images/tuiuti-02.jpg"
-              alt="Batalha de Tuiuti - representação"
-              className="w-full h-64 object-cover rounded-lg border border-sampaio-gold/30 sepia-[0.3]"
-            />
+            <p className="text-center text-sampaio-gold/70 text-[10px] md:text-xs uppercase tracking-[0.4em] font-display mb-4">
+              A Batalha em movimento
+            </p>
+            <div className="relative aspect-video w-full rounded-lg overflow-hidden border border-sampaio-gold/30 bg-black shadow-2xl">
+              <video
+                controls
+                preload="metadata"
+                playsInline
+                className="w-full h-full"
+              >
+                <source src="/videos/tuiuti-tatico.mp4" type="video/mp4" />
+                Seu navegador não suporta vídeo HTML5.
+              </video>
+            </div>
+            <p className="text-center text-sampaio-parchment/50 text-xs italic mt-3">
+              Reconstituição tática da Batalha de Tuiuti — Piquete Aliado, Corpo Uruguaio e Posição de Mallet
+            </p>
           </motion.div>
         </div>
       </div>

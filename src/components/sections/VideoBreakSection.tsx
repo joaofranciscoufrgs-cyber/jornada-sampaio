@@ -17,10 +17,10 @@ export function VideoBreakSection() {
           className="text-center mb-10"
         >
           <p className="text-sampaio-gold/60 text-xs uppercase tracking-[0.4em] font-display mb-3">
-            Um momento de silêncio
+            A batalha dos patronos · Episódio 3
           </p>
           <h2 className="font-display text-3xl md:text-5xl text-sampaio-parchment">
-            O legado em movimento
+            A Vitória de Tuiuti
           </h2>
         </motion.header>
 
@@ -49,7 +49,7 @@ export function VideoBreakSection() {
           transition={{ delay: 0.3 }}
           className="text-center text-sampaio-parchment/60 text-sm italic mt-6 max-w-2xl mx-auto"
         >
-          Mais de 150 anos depois, o espírito do Brigadeiro segue presente em cada infante.
+          Reconstituição do combate que consagrou Sampaio como o Bravo dos Bravos.
         </motion.p>
       </div>
     </section>
