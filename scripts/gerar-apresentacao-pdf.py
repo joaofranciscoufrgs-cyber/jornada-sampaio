@@ -282,12 +282,13 @@ y -= 12
 c.setFillColor(DIM)
 c.setFont("Helvetica", 8.5)
 sections = [
-    "1. Abertura (Hero)  •  2. Vídeo institucional (cold open)  •  3. Jornada nacional (mapa)",
-    "4. Carreira do Bravo (17 marcos)  •  5. Guerra da Tríplice Aliança (modo slide tradicional)",
-    "6. Tuiuti tático (3ª Div Encouraçada)  •  7. Os 3 Ferimentos (clímax emocional)",
-    "8. Vídeo 1min (respiro)  •  9. Legado e homenagens",
-    "10. A Rainha das Armas Hoje (FEB Itália + 10 especializações modernas)",
-    "11. Encerramento com 'Salve o Brigadeiro!' e créditos AOR/2-RS",
+    "1. Abertura (Hero)  •  2. Vídeo institucional (cold open)",
+    "3. Jornada nacional (mapa)  •  4. Carreira do Bravo (17 marcos)",
+    "5. Guerra da Tríplice Aliança (modo slide tradicional)",
+    "6. Tuiuti tático (3ª Div Encouraçada) com vídeo da batalha",
+    "7. Os 3 Ferimentos (clímax)  •  8. Vídeo 'A Vitória de Tuiuti'",
+    "9. Legado e homenagens",
+    "10. Encerramento: Oração do Infante + 'Salve o Brigadeiro!' + créditos AOR/2-RS",
 ]
 for s in sections:
     c.drawString(MARGIN, y, s); y -= 11

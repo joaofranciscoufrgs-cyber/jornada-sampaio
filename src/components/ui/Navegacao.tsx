@@ -12,7 +12,6 @@ const links = [
   { id: "ferimentos", label: "Os 3 Ferimentos" },
   { id: "video-break", label: "Vídeo" },
   { id: "legado", label: "Legado" },
-  { id: "rainha-hoje", label: "Rainha Hoje" },
   { id: "encerramento", label: "Apologia" },
 ];
 
