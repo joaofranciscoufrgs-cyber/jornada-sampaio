@@ -6,10 +6,12 @@ import { formatCPF, formatPhone } from "@/lib/validations";
 export function InscricaoForm() {
   const router = useRouter();
   const [form, setForm] = useState({
+    nome_completo: "",
     nome_guerra: "",
     cpf: "",
     email: "",
     telefone: "",
+    eh_aluno: true,
     consentimento: false,
   });
   const [loading, setLoading] = useState(false);
@@ -56,6 +58,19 @@ export function InscricaoForm() {
         </p>
 
         <form onSubmit={submit} className="space-y-4">
+          <Field label="Nome completo">
+            <input
+              type="text"
+              required
+              maxLength={120}
+              value={form.nome_completo}
+              onChange={(e) => update("nome_completo", e.target.value)}
+              autoFocus
+              autoComplete="name"
+              className="w-full bg-sampaio-ink border border-sampaio-gold/40 rounded px-4 py-3 text-sampaio-parchment focus:outline-none focus:border-sampaio-gold"
+            />
+          </Field>
+
           <Field label="Nome de guerra">
             <input
               type="text"
@@ -63,7 +78,6 @@ export function InscricaoForm() {
               maxLength={80}
               value={form.nome_guerra}
               onChange={(e) => update("nome_guerra", e.target.value)}
-              autoFocus
               className="w-full bg-sampaio-ink border border-sampaio-gold/40 rounded px-4 py-3 text-sampaio-parchment focus:outline-none focus:border-sampaio-gold"
             />
           </Field>
@@ -101,6 +115,33 @@ export function InscricaoForm() {
               maxLength={16}
               className="w-full bg-sampaio-ink border border-sampaio-gold/40 rounded px-4 py-3 text-sampaio-parchment focus:outline-none focus:border-sampaio-gold font-mono"
             />
+          </Field>
+
+          <Field label="Você é aluno do CPOR/PA?">
+            <div className="grid grid-cols-2 gap-2">
+              <button
+                type="button"
+                onClick={() => update("eh_aluno", true)}
+                className={`px-4 py-3 rounded border-2 font-display uppercase tracking-widest text-sm transition-all ${
+                  form.eh_aluno
+                    ? "bg-sampaio-gold text-sampaio-ink border-sampaio-gold"
+                    : "bg-sampaio-ink text-sampaio-parchment/70 border-sampaio-gold/40 hover:border-sampaio-gold"
+                }`}
+              >
+                Sim, sou aluno
+              </button>
+              <button
+                type="button"
+                onClick={() => update("eh_aluno", false)}
+                className={`px-4 py-3 rounded border-2 font-display uppercase tracking-widest text-sm transition-all ${
+                  !form.eh_aluno
+                    ? "bg-sampaio-gold text-sampaio-ink border-sampaio-gold"
+                    : "bg-sampaio-ink text-sampaio-parchment/70 border-sampaio-gold/40 hover:border-sampaio-gold"
+                }`}
+              >
+                Não
+              </button>
+            </div>
           </Field>
 
           <label className="flex gap-3 items-start text-xs text-sampaio-parchment/70 leading-relaxed cursor-pointer mt-4">

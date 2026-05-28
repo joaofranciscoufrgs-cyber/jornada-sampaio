@@ -7,12 +7,17 @@ import { formatCPF, formatPhone } from "@/lib/validations";
 
 type Inscricao = {
   id: number;
+  nome_completo: string;
   nome_guerra: string;
   cpf: string;
   email: string;
   telefone: string;
+  eh_aluno: boolean;
   consentimento: boolean;
   created_at: string;
+  rating: number | null;
+  comentario: string | null;
+  avaliado_em: string | null;
 };
 
 export function AdminDashboard({ adminEmail }: { adminEmail: string }) {
@@ -53,12 +58,22 @@ export function AdminDashboard({ adminEmail }: { adminEmail: string }) {
     const q = busca.toLowerCase();
     return rows.filter(
       (r) =>
+        (r.nome_completo || "").toLowerCase().includes(q) ||
         r.nome_guerra.toLowerCase().includes(q) ||
         r.email.toLowerCase().includes(q) ||
         r.cpf.includes(q) ||
         r.telefone.includes(q)
     );
   }, [rows, busca]);
+
+  const avaliacoesCount = rows.filter((r) => r.rating !== null).length;
+  const mediaNota =
+    avaliacoesCount > 0
+      ? (
+          rows.reduce((s, r) => s + (r.rating ?? 0), 0) / avaliacoesCount
+        ).toFixed(1)
+      : "—";
+  const alunosCount = rows.filter((r) => r.eh_aluno).length;
 
   const logout = async () => {
     await fetch("/api/admin/logout", { method: "POST" });
@@ -118,23 +133,11 @@ export function AdminDashboard({ adminEmail }: { adminEmail: string }) {
           </div>
         </header>
 
-        <div className="grid sm:grid-cols-3 gap-4 mb-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-6">
           <Stat label="Inscritos" value={rows.length} highlight />
-          <Stat
-            label="Última inscrição"
-            value={
-              rows[0]
-                ? new Date(rows[0].created_at).toLocaleTimeString("pt-BR", {
-                    hour: "2-digit",
-                    minute: "2-digit",
-                  })
-                : "—"
-            }
-          />
-          <Stat
-            label="Consentimentos"
-            value={`${rows.filter((r) => r.consentimento).length} / ${rows.length}`}
-          />
+          <Stat label="Alunos" value={`${alunosCount}/${rows.length}`} />
+          <Stat label="Avaliações" value={`${avaliacoesCount}/${rows.length}`} />
+          <Stat label="Nota média" value={mediaNota} />
         </div>
 
         <div className="mb-4">
@@ -153,10 +156,14 @@ export function AdminDashboard({ adminEmail }: { adminEmail: string }) {
               <thead className="bg-sampaio-ink/60 border-b border-sampaio-gold/20">
                 <tr className="text-sampaio-gold/80 text-xs uppercase tracking-widest font-display">
                   <th className="text-left px-4 py-3">#</th>
-                  <th className="text-left px-4 py-3">Nome de guerra</th>
+                  <th className="text-left px-4 py-3">Nome completo</th>
+                  <th className="text-left px-4 py-3">Guerra</th>
                   <th className="text-left px-4 py-3">CPF</th>
                   <th className="text-left px-4 py-3">E-mail</th>
                   <th className="text-left px-4 py-3">Telefone</th>
+                  <th className="text-center px-2 py-3">Aluno</th>
+                  <th className="text-center px-2 py-3">Nota</th>
+                  <th className="text-left px-4 py-3">Comentário</th>
                   <th className="text-left px-4 py-3">Inscrito em</th>
                   <th className="text-right px-4 py-3"></th>
                 </tr>
@@ -164,14 +171,14 @@ export function AdminDashboard({ adminEmail }: { adminEmail: string }) {
               <tbody>
                 {loading && (
                   <tr>
-                    <td colSpan={7} className="text-center py-8 text-sampaio-parchment/50">
+                    <td colSpan={11} className="text-center py-8 text-sampaio-parchment/50">
                       Carregando…
                     </td>
                   </tr>
                 )}
                 {!loading && filtered.length === 0 && (
                   <tr>
-                    <td colSpan={7} className="text-center py-12 text-sampaio-parchment/50 italic">
+                    <td colSpan={11} className="text-center py-12 text-sampaio-parchment/50 italic">
                       {busca ? "Nenhum resultado." : "Nenhuma inscrição ainda. Aguardando os alunos…"}
                     </td>
                   </tr>
@@ -179,18 +186,40 @@ export function AdminDashboard({ adminEmail }: { adminEmail: string }) {
                 {filtered.map((r, i) => (
                   <tr
                     key={r.id}
-                    className="border-b border-sampaio-gold/10 hover:bg-sampaio-ink/30"
+                    className="border-b border-sampaio-gold/10 hover:bg-sampaio-ink/30 align-top"
                   >
                     <td className="px-4 py-3 text-sampaio-gold/70 font-mono">{i + 1}</td>
-                    <td className="px-4 py-3 text-sampaio-parchment font-display">{r.nome_guerra}</td>
-                    <td className="px-4 py-3 text-sampaio-parchment/80 font-mono">{formatCPF(r.cpf)}</td>
+                    <td className="px-4 py-3 text-sampaio-parchment">
+                      {r.nome_completo || <span className="text-sampaio-parchment/30 italic">—</span>}
+                    </td>
+                    <td className="px-4 py-3 text-sampaio-parchment/80 font-display">{r.nome_guerra}</td>
+                    <td className="px-4 py-3 text-sampaio-parchment/80 font-mono whitespace-nowrap">{formatCPF(r.cpf)}</td>
                     <td className="px-4 py-3 text-sampaio-parchment/80">
-                      <a href={`mailto:${r.email}`} className="hover:text-sampaio-gold">
+                      <a href={`mailto:${r.email}`} className="hover:text-sampaio-gold break-all">
                         {r.email}
                       </a>
                     </td>
-                    <td className="px-4 py-3 text-sampaio-parchment/80 font-mono">{formatPhone(r.telefone)}</td>
-                    <td className="px-4 py-3 text-sampaio-parchment/60 text-xs font-mono">
+                    <td className="px-4 py-3 text-sampaio-parchment/80 font-mono whitespace-nowrap">{formatPhone(r.telefone)}</td>
+                    <td className="px-2 py-3 text-center">
+                      {r.eh_aluno ? (
+                        <span className="text-emerald-400" title="Sim">✓</span>
+                      ) : (
+                        <span className="text-sampaio-parchment/40" title="Não">—</span>
+                      )}
+                    </td>
+                    <td className="px-2 py-3 text-center">
+                      {r.rating ? (
+                        <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-sampaio-gold/20 text-sampaio-gold font-bold font-mono text-sm">
+                          {r.rating}
+                        </span>
+                      ) : (
+                        <span className="text-sampaio-parchment/30">—</span>
+                      )}
+                    </td>
+                    <td className="px-4 py-3 text-sampaio-parchment/70 text-xs max-w-[14rem]">
+                      {r.comentario || <span className="text-sampaio-parchment/30 italic">—</span>}
+                    </td>
+                    <td className="px-4 py-3 text-sampaio-parchment/60 text-xs font-mono whitespace-nowrap">
                       {new Date(r.created_at).toLocaleString("pt-BR")}
                     </td>
                     <td className="px-4 py-3 text-right">

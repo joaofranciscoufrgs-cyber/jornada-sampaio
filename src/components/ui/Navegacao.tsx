@@ -13,6 +13,7 @@ const links = [
   { id: "video-break", label: "Vídeo" },
   { id: "legado", label: "Legado" },
   { id: "encerramento", label: "Apologia" },
+  { id: "avaliacao", label: "Avaliação" },
 ];
 
 export function Navegacao() {

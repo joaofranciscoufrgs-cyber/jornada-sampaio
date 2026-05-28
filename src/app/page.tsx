@@ -11,6 +11,7 @@ import { VideoBreakSection } from "@/components/sections/VideoBreakSection";
 import { LegadoSection } from "@/components/sections/LegadoSection";
 import { VideoLongoSection } from "@/components/sections/VideoLongoSection";
 import { EncerramentoSection } from "@/components/sections/EncerramentoSection";
+import { AvaliacaoSection } from "@/components/sections/AvaliacaoSection";
 import { Navegacao } from "@/components/ui/Navegacao";
 
 export const dynamic = "force-dynamic";
@@ -36,6 +37,7 @@ export default async function Home() {
       <VideoBreakSection />
       <LegadoSection />
       <EncerramentoSection />
+      {inscrito && <AvaliacaoSection />}
     </main>
   );
 }

@@ -33,14 +33,16 @@ export async function POST(req: Request) {
   try {
     const inserted = await query<{ id: number; nome_guerra: string }>(
       `INSERT INTO inscricoes
-         (nome_guerra, cpf, email, telefone, consentimento, ip, user_agent)
-       VALUES ($1,$2,$3,$4,$5,$6,$7)
+         (nome_completo, nome_guerra, cpf, email, telefone, eh_aluno, consentimento, ip, user_agent)
+       VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)
        RETURNING id, nome_guerra`,
       [
+        data.nome_completo,
         data.nome_guerra,
         data.cpf,
         data.email,
         data.telefone,
+        data.eh_aluno,
         data.consentimento,
         ip,
         ua,

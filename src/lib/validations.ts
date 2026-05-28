@@ -42,6 +42,7 @@ export function formatPhone(input: string): string {
 }
 
 export const inscricaoSchema = z.object({
+  nome_completo: z.string().trim().min(3, "Nome muito curto").max(120),
   nome_guerra: z.string().trim().min(2, "Nome muito curto").max(80),
   cpf: z
     .string()
@@ -53,7 +54,15 @@ export const inscricaoSchema = z.object({
     .string()
     .transform(digitsOnly)
     .refine((v) => v.length >= 10 && v.length <= 11, "Telefone inválido"),
+  eh_aluno: z.boolean(),
   consentimento: z.literal(true, { message: "Consentimento obrigatório" }),
 });
 
 export type InscricaoInput = z.infer<typeof inscricaoSchema>;
+
+export const avaliacaoSchema = z.object({
+  rating: z.number().int().min(1, "Selecione uma nota").max(5),
+  comentario: z.string().trim().max(2000).optional().default(""),
+});
+
+export type AvaliacaoInput = z.infer<typeof avaliacaoSchema>;
